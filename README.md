@@ -10,7 +10,7 @@ Let's say we have simple function like this:
   ```cpp
   void maybe_trigger(float temperature) {
       if(temperature > 100) {
-          printf("Triggered at value %d.\n", a);
+          printf("Triggered at value %d.\n", temperature);
       }
       else {
           printf(Not triggered yet.\n");
