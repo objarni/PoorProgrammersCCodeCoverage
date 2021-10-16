@@ -1,4 +1,4 @@
-# Poor Mans Line Coverage In C
+# Poor Programmers C Code Coverage
 A hack using the preprocessor to get (non-branching) code coverage.
 
 # Idea
