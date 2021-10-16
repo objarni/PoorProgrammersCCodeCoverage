@@ -3,7 +3,7 @@ A hack using the preprocessor to get (non-branching) code coverage.
 
 # Idea
 
-Why not use the __LINE__ preprocessor directive to keep track of what lines have been executed?
+Why not use the `__LINE__` preprocessor directive to keep track of what lines have been executed?
 
 Let's say we have simple function like this:
 
