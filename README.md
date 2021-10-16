@@ -24,12 +24,12 @@ tooling available. What can we do?
 Well, we can define a macro C (for cover) like this:
 
   ```cpp
-  #define C  (rowsVisited[numRowsVisited++] = __LINE__);
-  int rowsVisited[50000];
-  int numRowsVisited = 0;
+  #define C  (lineVisited[numLinesVisited++] = __LINE__);
+  int lineVisited[50000];
+  int numLinesVisited = 0;
   ```
 
-`rowsVisited` together with `numRowsVisited` keeps track of what lines are visited, using the
+`lineVisited` together with `numLinesVisited` keeps track of what lines are visited, using the
 `__LINE__` preprocessor macro. They can e.g be defined just above the function we want to cover.
 
 Then we can put this C macro at the start of every line we want to cover:
@@ -55,8 +55,8 @@ are missing:
       int numCovered = 0;
       for(int line = lineStart; line <= lineEnd; line++) {
         int covered = 0;
-        for(int i=0; i<numRowsVisited; i++) {
-          if(rowsVisited[i] == line) {
+        for(int i=0; i<numLinesVisited; i++) {
+          if(lineVisited[i] == line) {
             covered = 1;
             numCovered++;
             break;
