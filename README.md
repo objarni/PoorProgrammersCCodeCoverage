@@ -7,7 +7,7 @@ Why not use the __LINE__ preprocessor directive to keep track of what lines have
 
 Let's say we have simple function like this:
 
-  ```
+  ```cpp
   void maybe_trigger(float temperature) {
       if(temperature > 100) {
           printf("Triggered at value %d.\n", a);
@@ -23,7 +23,7 @@ tooling available. What can we do?
 
 Well, we can define a macro C (for cover) like this:
 
-  ```
+  ```cpp
   #define C  (rowsVisited[numRowsVisited++] = __LINE__);
   int rowsVisited[50000];
   int numRowsVisited = 0;
@@ -34,7 +34,7 @@ Well, we can define a macro C (for cover) like this:
 
 Then we can put this C macro at the start of every line we want to cover:
 
-  ```
+  ```cpp
   void maybe_trigger(float temperature) {
   C    if(temperature > 100) {
   C        printf("Triggered at value %d.\n", a);
@@ -49,7 +49,7 @@ Now we can write unit tests, which will update the rowsVisited buffer, and using
 little helper function, we can display what coverage we have in percent, and what lines
 are missing:
 
-   ```
+   ```cpp
    void coverageReport(int lineStart, int lineEnd) {
       int totalLines = lineEnd - lineStart + 1;
       int numCovered = 0;
@@ -72,14 +72,14 @@ are missing:
 Note that `coverageReport` needs to know what line to start and end with. For example, maybe
 the above function was defined at line 37-42 in some module, then it would be called like this:
 
-   ```
+   ```cpp
    coverageReport(37, 42);
    ```
 
 One final challange: when to call coverageReport? Well, one idea is from a 'reportTest' unit test,
 which is somehow run last, after all other (relevant) unit tests. In CGreen[1] style:
 
-   ```
+   ```cpp
    Ensure(some_suite_name, reportTest) {
      coverageReport(37, 42);
    }
