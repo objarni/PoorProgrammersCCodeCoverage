@@ -48,10 +48,10 @@ little helper function, we can display what coverage we have in percent, and wha
 are missing:
 
    ```
-   void coverageReport(int scopeStart, int scopeEnd) {
-      int totalLines = scopeEnd - scopeStart + 1;
+   void coverageReport(int lineStart, int lineEnd) {
+      int totalLines = lineEnd - lineStart + 1;
       int numCovered = 0;
-      for(int line = scopeStart; line <= scopeEnd; line++) {
+      for(int line = lineStart; line <= lineEnd; line++) {
         int covered = 0;
         for(int i=0; i<numRowsVisited; i++) {
           if(rowsVisited[i] == line) {
@@ -67,7 +67,7 @@ are missing:
    }
    ```
    
-Note that `coverageReport` needs to know line to start- and end with. For example, maybe
+Note that `coverageReport` needs to know what line to start and end with. For example, maybe
 the above function was defined at line 37-42 in some module, then it would be called like this:
 
    ```
