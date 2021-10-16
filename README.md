@@ -25,6 +25,8 @@ Well, we can define a macro C (for cover) like this:
 
   ```
   #define C  (rowsVisited[numRowsVisited++] = __LINE__);
+  int rowsVisited[50000];
+  int numRowsVisited = 0;
   ```
 
 `rowsVisited` together with `numRowsVisited` keeps track of what lines are visited, using the
