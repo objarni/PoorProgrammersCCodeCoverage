@@ -1,5 +1,5 @@
 # Poor Mans Line Coverage In C
-An hack using the preprocessor to get (non-branching) line code coverage
+A hack using the preprocessor to get (non-branching) line code coverage
 
 # Idea
 
