@@ -30,7 +30,7 @@ Well, we can define a macro C (for cover) like this:
   ```
 
 `rowsVisited` together with `numRowsVisited` keeps track of what lines are visited, using the
-__LINE__ preprocessor macro. They can e.g be defined just above the function we want to cover.
+`__LINE__` preprocessor macro. They can e.g be defined just above the function we want to cover.
 
 Then we can put this C macro at the start of every line we want to cover:
 
