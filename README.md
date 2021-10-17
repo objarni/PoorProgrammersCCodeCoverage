@@ -76,7 +76,7 @@ the above function was defined at line 37-42 in some module, then it would be ca
    coverageReport(37, 42);
    ```
 
-One final challange: when to call coverageReport? Well, one idea is from a 'reportTest' unit test,
+One final challenge: when to call coverageReport? Well, one idea is from a 'reportTest' unit test,
 which is somehow run last, after all other (relevant) unit tests. In CGreen[1] style:
 
    ```cpp
