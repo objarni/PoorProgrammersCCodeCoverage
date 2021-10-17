@@ -45,7 +45,7 @@ Then we can put this C macro at the start of every line we want to cover:
   }
   ```
 
-Now we can write unit tests, which will update the rowsVisited buffer, and using this
+Now we can write unit tests, which will update the lineVisited buffer, and using this
 little helper function, we can display what coverage we have in percent, and what lines
 are missing:
 
