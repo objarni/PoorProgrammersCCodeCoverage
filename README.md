@@ -1,4 +1,4 @@
-# Poor Programmers C Code Coverage
+# Poor Programmers C Code Coverage (or, if you prefer, PreProCessor Code Coverage)
 A hack using the preprocessor to get (non-branching) code coverage.
 
 # Idea
