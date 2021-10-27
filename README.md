@@ -35,17 +35,17 @@ Well, we can define a macro C (for cover) like this:
 Then we can put this C macro at the start of every line we want to cover:
 
   ```cpp
-  void maybe_trigger(float temperature) {
+  void maybe_trigger(float temperature) {     // Line 37
   C    if(temperature > 100) {
   C        printf("Triggered at value %d.\n", a);
   C    }
-       else {
+       else {                                 // Line 40
   C        printf(Not triggered yet.\n");
-  C    }
+  C    }                                      // Line 42
   }
   ```
 
-Note that we cannot put a coverage C on line 42, since it would break the syntax of the language
+Note that we cannot put a coverage C on line 40, since it would break the syntax of the language
 putting a statement inbetween '}' and 'else'.
 
 Now we can write unit tests, which will update the lineVisited buffer, and using this
