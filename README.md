@@ -39,11 +39,14 @@ Then we can put this C macro at the start of every line we want to cover:
   C    if(temperature > 100) {
   C        printf("Triggered at value %d.\n", a);
   C    }
-  C    else {
+       else {
   C        printf(Not triggered yet.\n");
   C    }
   }
   ```
+
+Note that we cannot put a coverage C on line 42, since it would break the syntax of the language
+putting a statement inbetween '}' and 'else'.
 
 Now we can write unit tests, which will update the lineVisited buffer, and using this
 little helper function, we can display what coverage we have in percent, and what lines
